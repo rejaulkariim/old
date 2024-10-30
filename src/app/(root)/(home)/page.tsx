@@ -1,11 +1,9 @@
-import MaxWidthWrapper from "@/components/shared/MaxWidthWrapper";
+import Hero from "@/components/shared/Hero";
 
 export default function Home() {
   return (
-    <main>
-      <MaxWidthWrapper>
-        <h1>Hello World</h1>
-      </MaxWidthWrapper>
-    </main>
+    <>
+      <Hero />
+    </>
   );
 }
