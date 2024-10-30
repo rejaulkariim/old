@@ -1,12 +1,16 @@
+import { Icons } from "@/components/shared/Icons";
 import { siteConfig } from "@/config/site";
-import { BadgeCheck } from "lucide-react";
 import Link from "next/link";
 
 const Logo = () => {
   return (
-    <Link href="/" className="font-bold flex items-center gap-2">
-      <BadgeCheck className="text-primary fill-background" />
-      <span className="font-bold text-lg tracking-tight">
+    <Link
+      href="/"
+      className="font-bold flex items-center gap-1 rounded-full group"
+    >
+      <Icons.logo className="h-6 w-6 text-primary fill-primary-foreground transform transition-transform duration-500 group-hover:rotate-180" />
+
+      <span className="font-extrabold text-lg mt-0.5 leading-tight tracking-tight">
         {siteConfig.name}
       </span>
     </Link>

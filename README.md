@@ -1,1 +1,1 @@
-# Nextjs Supabase Authjs Starter Template
+# Connect with indie makers around the world

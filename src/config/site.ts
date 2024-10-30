@@ -1,10 +1,10 @@
 import { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
-  name: "Starter Kit",
-  title: "Turn visitors into customers with popup notifications",
+  name: "Indie Makers",
+  title: "Connect with indie makers around the world",
   description:
-    "Deliver attention-grabbing pop-up notifications that present visitors with hard truths, driving stronger engagement and boosting conversions.",
+    "An open-source community for indie makers to share their projects, connect with each other, and build a community.",
   url: "https://appbrews.co",
   ogImage: "https://appbrews.co/og.png",
   links: {
