@@ -2,9 +2,9 @@ import { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
   name: "Indie Makers",
-  title: "Connect with indie makers around the world",
+  title: "Pitch your startup connect with inide makers.",
   description:
-    "An open-source community for indie makers to share their projects, connect with each other, and build a community.",
+    "An open-source community for indie makers to show stratups and and get noticed in virtual competitions.ro",
   url: "https://appbrews.co",
   ogImage: "https://appbrews.co/og.png",
   links: {

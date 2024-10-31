@@ -1,9 +1,9 @@
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
-import { Bricolage_Grotesque } from "next/font/google";
+import { Bai_Jamjuree } from "next/font/google";
 import "./globals.css";
 
-const font = Bricolage_Grotesque({
+const font = Bai_Jamjuree({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });

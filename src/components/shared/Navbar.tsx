@@ -6,7 +6,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import NavItems from "./Navitems";
 
 const Navbar = async () => {
   // const user = await getUserFromDB();
@@ -14,6 +13,8 @@ const Navbar = async () => {
   const session = await auth();
 
   const user = session?.user;
+
+  console.log(user);
 
   return (
     <header className="h-16 border-b sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -25,9 +26,9 @@ const Navbar = async () => {
           </div>
 
           {/* Centered NavItems */}
-          <div className="flex justify-center items-center">
+          {/* <div className="flex justify-center items-center">
             <NavItems />
-          </div>
+          </div> */}
 
           {/* UserAccountNav or Login on the right */}
           <div className="hidden w-44 md:flex justify-end items-center space-x-4">

@@ -31,7 +31,7 @@ const UserAccountNav = ({ user }: UserAccountNavProps) => {
         <DropdownMenuGroup>
           <DropdownMenuItem asChild>
             <Link
-              href="/dashboard"
+              href="/maker/dashboard"
               className="cursor-pointer hover:bg-background"
             >
               <DashboardIcon className="mr-2 h-4 w-4" />
