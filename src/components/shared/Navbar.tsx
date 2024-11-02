@@ -1,7 +1,5 @@
 import Logo from "@/components/shared/Logo";
 import MaxWidthWrapper from "@/components/shared/MaxWidthWrapper";
-import MobileNav from "@/components/shared/MobileNav";
-import UserAccountNav from "@/components/shared/UserAccountNav";
 import { buttonVariants } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
 import { cn } from "@/lib/utils";
@@ -32,16 +30,9 @@ const Navbar = async () => {
 
           {/* UserAccountNav or Login on the right */}
           <div className="hidden w-44 md:flex justify-end items-center space-x-4">
-            {user ? (
-              <UserAccountNav user={user} />
-            ) : (
-              <Link href="/auth/login" className={cn(buttonVariants())}>
-                Login
-              </Link>
-            )}
-          </div>
-          <div className="md:hidden w-44 flex justify-end items-center space-x-4">
-            {user ? <UserAccountNav user={user} /> : <MobileNav />}
+            <Link href="/auth/login" className={cn(buttonVariants())}>
+              Login
+            </Link>
           </div>
         </nav>
       </MaxWidthWrapper>

@@ -2,22 +2,36 @@ import MaxWidthWrapper from "@/components/shared/MaxWidthWrapper";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Logo from "./Logo";
 
 const Hero = () => {
   return (
-    <section className="flex items-center justify-center min-h-[70vh]">
+    <section className="flex items-center justify-center min-h-[80vh] bg-background">
       <MaxWidthWrapper>
-        <div className="mx-auto text-center flex flex-col items-center max-w-3xl space-y-6">
+        <div className="mx-auto text-center flex flex-col items-center max-w-2xl space-y-6">
+          <Logo />
           <h1 className="tracking-tight font-extrabold !leading-tight text-foreground text-3xl md:text-6xl">
-            Pitch Your Startup, Connect With Entrepreneurs.
+            Showcase and grow your saas startup
           </h1>
-          <p className="text-base md:text-xl text-foreground max-w-2xl mx-auto">
-            An open-source community for indie makers to show stratups and and
-            get noticed in virtual competitions.
+          <p className="text-base md:text-xl font-normal text-muted-foreground">
+            Your personal indie page to showcase all your startups <br /> and
+            everyting you create.
           </p>
-          <Link href="/wishlist" className={cn(buttonVariants())}>
-            Get early access
+          <Link
+            href="/onboarding"
+            className={cn(
+              buttonVariants({
+                size: "lg",
+                className: "py-6 text-base font-medium",
+              })
+            )}
+          >
+            Create your canvas
           </Link>
+
+          <div className="text-xs">
+            <Link href="/auth/login">Login</Link>
+          </div>
         </div>
       </MaxWidthWrapper>
     </section>

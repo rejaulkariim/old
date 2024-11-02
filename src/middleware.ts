@@ -2,7 +2,7 @@ import { auth } from "@/lib/auth";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-const protectedRoutes = ["/maker/dashboard"];
+const protectedRoutes = ["/maker/dashboard/profile"];
 const authRoutes = ["/auth/login"];
 
 export default async function middleware(request: NextRequest) {
@@ -24,7 +24,10 @@ export default async function middleware(request: NextRequest) {
 
   // Redirect to "/dashboard" if logged in and trying to access /auth/sign-in
   if (session && isAuthRoute) {
-    const dashboardURL = new URL("/maker/dashboard", request.nextUrl.origin);
+    const dashboardURL = new URL(
+      "/maker/dashboard/profile",
+      request.nextUrl.origin
+    );
     return NextResponse.redirect(dashboardURL.toString());
   }
 

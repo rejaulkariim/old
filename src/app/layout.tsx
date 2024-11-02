@@ -1,11 +1,13 @@
 import { siteConfig } from "@/config/site";
+import ReduxProvider from "@/contexts/ReduxProvider";
 import { cn } from "@/lib/utils";
-import { Bai_Jamjuree } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const font = Bai_Jamjuree({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const Inter = localFont({
+  src: "../app/fonts/InterVF.ttf",
+  weight: "100 200 300 400 500 600 700 800 900",
+  variable: "--font-inter",
 });
 
 export const metadata = {
@@ -68,7 +70,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("antialiased", font.className)}>{children}</body>
+      <body className={cn("antialiased", Inter.className)}>
+        <ReduxProvider>
+          <main>{children}</main>
+        </ReduxProvider>
+      </body>
     </html>
   );
 }

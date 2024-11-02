@@ -1,14 +1,14 @@
 import { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
-  name: "Indie Makers",
-  title: "Pitch your startup connect with inide makers.",
+  name: "Renamer",
+  title: " Showcase and grow your saas startups.",
   description:
-    "An open-source community for indie makers to show stratups and and get noticed in virtual competitions.ro",
-  url: "https://appbrews.co",
-  ogImage: "https://appbrews.co/og.png",
+    "Your personal indie page to showcase all your saas startups and everything you create.",
+  url: "https://keepeer.me",
+  ogImage: "https://keepeer.me/og.png",
   links: {
-    twitter: "https://twitter.com/appbrews",
-    github: "https://github.com/rejaulkariim/appbrews.bp",
+    twitter: "https://twitter.com/keepeer",
+    github: "https://github.com/rejaulkariim/keepeer",
   },
 };

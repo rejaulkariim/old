@@ -1,5 +1,5 @@
-import { GalleryVerticalEnd } from "lucide-react";
+import { Minimize } from "lucide-react";
 
 export const Icons = {
-  logo: GalleryVerticalEnd,
+  logo: Minimize,
 };
