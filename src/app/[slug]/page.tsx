@@ -1,8 +1,19 @@
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 import { TwitterLogoIcon } from "@radix-ui/react-icons";
-import { Banknote, MapPin } from "lucide-react";
+import {
+  Banknote,
+  Cloud,
+  LayoutGrid,
+  Link2,
+  MapPin,
+  Monitor,
+  Mountain,
+  Quote,
+  Smartphone,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -54,6 +65,40 @@ const MakersPage = () => {
 
   return (
     <>
+      <div className=" border bg-amber-300 flex items-center gap-3 p-3 rounded-lg shadow-sm absolute bottom-4 left-1/2 transform -translate-x-1/2">
+        <Button className="bg-[#4ADE80] hover:bg-[#4ADE80]/90 text-white font-medium">
+          Share my canvas
+        </Button>
+
+        <div className="flex items-center gap-1">
+          <Button variant="ghost" size="icon" className="h-9 w-9">
+            <Link2 className="h-4 w-4" />
+          </Button>
+          <Button variant="ghost" size="icon" className="h-9 w-9">
+            <Mountain className="h-4 w-4" />
+          </Button>
+          <Button variant="ghost" size="icon" className="h-9 w-9">
+            <Quote className="h-4 w-4" />
+          </Button>
+          <Button variant="ghost" size="icon" className="h-9 w-9">
+            <Cloud className="h-4 w-4" />
+          </Button>
+          <Button variant="ghost" size="icon" className="h-9 w-9">
+            <LayoutGrid className="h-4 w-4" />
+          </Button>
+        </div>
+
+        <Separator orientation="vertical" className="h-6" />
+
+        <div className="flex items-center gap-1">
+          <Button variant="ghost" size="icon" className="h-9 w-9">
+            <Monitor className="h-4 w-4" />
+          </Button>
+          <Button variant="ghost" size="icon" className="h-9 w-9">
+            <Smartphone className="h-4 w-4" />
+          </Button>
+        </div>
+      </div>
       <div className="md:grid md:grid-cols-12 gap-6 md:min-h-screen">
         <div className="md:col-span-4 h-full md:p-10 p-4 border-r">
           <div>

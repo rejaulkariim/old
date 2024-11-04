@@ -4,8 +4,7 @@ import { signIn, signOut } from "@/lib/auth";
 import { revalidatePath } from "next/cache";
 
 export const handleLogin = async (provider: string) => {
-  await signIn(provider, { redirectTo: "/dashboard" });
-  revalidatePath("/dashboard");
+  await signIn(provider, { redirectTo: "/onboarding" });
 };
 
 export const handleLogout = async () => {

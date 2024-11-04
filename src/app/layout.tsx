@@ -1,6 +1,7 @@
 import { siteConfig } from "@/config/site";
 import ReduxProvider from "@/contexts/ReduxProvider";
 import { cn } from "@/lib/utils";
+import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -10,38 +11,32 @@ const Inter = localFont({
   variable: "--font-inter",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
-    default: siteConfig.title,
-    template: `%s | ${siteConfig.name}`,
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
   },
+  metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
-
   keywords: [
     "Next.js",
     "React",
     "Tailwind CSS",
     "Server Components",
     "Radix UI",
-    "UI Shadcn",
-    "Next js Template",
-    "Next js Starter kit",
-    "Next js Boilerplate",
-    "Next js Boilerplate Template",
   ],
   authors: [
     {
-      name: "Rejaul Karim",
-      url: "https://github.com/rejaulkariim",
+      name: "shadcn",
+      url: "https://shadcn.com",
     },
   ],
-  creator: "Rejaul Karim",
-
+  creator: "shadcn",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteConfig.url,
-    title: siteConfig.title,
+    title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
@@ -53,14 +48,26 @@ export const metadata = {
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@rejaulkariim",
+    creator: "@shadcn",
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: `${siteConfig.url}/site.webmanifest`,
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
 };
 
 export default function RootLayout({
