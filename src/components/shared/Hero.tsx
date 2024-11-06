@@ -2,15 +2,13 @@ import MaxWidthWrapper from "@/components/shared/MaxWidthWrapper";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import Logo from "./Logo";
 
 const Hero = () => {
   return (
     <section className="flex items-center justify-center min-h-[80vh] bg-background">
       <MaxWidthWrapper>
         <div className="mx-auto text-center flex flex-col items-center max-w-2xl space-y-6">
-          <Logo />
-          <h1 className="tracking-tight font-extrabold !leading-tight text-foreground text-3xl md:text-6xl">
+          <h1 className="tracking-tight font-extrabold !leading-tight text-foreground text-3xl md:text-7xl">
             Showcase and grow your saas startup
           </h1>
           <p className="text-base md:text-xl font-normal text-muted-foreground">
@@ -28,10 +26,6 @@ const Hero = () => {
           >
             Create your canvas
           </Link>
-
-          <div className="text-xs">
-            <Link href="/auth/login">Login</Link>
-          </div>
         </div>
       </MaxWidthWrapper>
     </section>

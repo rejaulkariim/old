@@ -1,13 +1,16 @@
 "use server";
 
 import { db } from "@/lib/db";
+import { getUserFromDB } from "./auth.action";
 
-export async function CreateProfile(params) {
+export async function CreateProfile({ username }: { username: string }) {
+  const user = await getUserFromDB();
+
   try {
     // Check if username already exists
     const existingUserName = await db.profile.findUnique({
       where: {
-        userName: params.username,
+        username,
       },
     });
 
@@ -19,12 +22,15 @@ export async function CreateProfile(params) {
       };
     }
 
+    if (!user?.id) {
+      throw new Error("User ID is required to create a profile.");
+    }
+
     // Create new user profile
-    await db.user.create({
+    const data = await db.profile.create({
       data: {
-        name: params.name,
-        email: params.email,
-        image: params.image,
+        username,
+        authorId: user?.id,
       },
     });
 
@@ -32,6 +38,7 @@ export async function CreateProfile(params) {
       status: 201,
       success: true,
       message: "Profile created successfully",
+      data: data,
     };
   } catch (error: unknown) {
     console.error("Error creating profile:", error);
@@ -39,7 +46,39 @@ export async function CreateProfile(params) {
       status: 500,
       success: false,
       message: "An error occurred while creating the profile",
-      error: error.message, // Optional: Include error message for debugging
+    };
+  }
+}
+
+export async function GetProfileByUserName({ username }: { username: string }) {
+  try {
+    // Check if username already exists
+    const data = await db.profile.findUnique({
+      where: {
+        username,
+      },
+    });
+
+    if (!data) {
+      return {
+        status: 404,
+        success: false,
+        message: "Profile not found",
+      };
+    }
+
+    return {
+      status: 200,
+      success: true,
+      message: "Profile retrieved successfully",
+      data: data,
+    };
+  } catch (error: unknown) {
+    console.error("Error creating profile:", error);
+    return {
+      status: 500,
+      success: false,
+      message: "An error occurred while creating the profile",
     };
   }
 }

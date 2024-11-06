@@ -14,11 +14,13 @@ import { CreateProfile } from "@/server/actions/profile.action";
 import { uniqueLinkValidationSchema } from "@/server/validations/uniqueLink.validation"; // Or any icon library
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Icons } from "../shared/Icons";
 
 const CreateUniqueLinkForm = () => {
+  const router = useRouter();
   // 1. Define the form.
   const form = useForm<z.infer<typeof uniqueLinkValidationSchema>>({
     resolver: zodResolver(uniqueLinkValidationSchema),
@@ -33,11 +35,12 @@ const CreateUniqueLinkForm = () => {
   const onSubmit = async (
     values: z.infer<typeof uniqueLinkValidationSchema>
   ) => {
-    console.log(values);
-
     const res = await CreateProfile(values);
+    console.log(res);
     if (res.success) {
       alert("Profile created successfully");
+
+      router.push(`/${res?.data?.username}`);
     }
   };
 

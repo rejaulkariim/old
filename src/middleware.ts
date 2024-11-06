@@ -2,7 +2,7 @@ import { auth } from "@/lib/auth";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-const protectedRoutes = ["/maker/dashboard/profile"];
+const protectedRoutes = ["/onboarding"];
 const authRoutes = ["/auth/login"];
 
 export default async function middleware(request: NextRequest) {
